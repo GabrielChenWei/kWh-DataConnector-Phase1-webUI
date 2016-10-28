@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html style="" class=" js csstransforms csstransforms3d" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>CityTouch Energy Report</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="applicationRoot" content="https://citytouch.com:443/">
+    <meta name="userCulture" content="en-SG">
+    <meta name="jqLocalResource" content="jquery.globalize/cultures/globalize.culture.en-SG.js">
+
+<!---------------------------------------------------------------------------------------------------->
+	<link rel="stylesheet" type="text/css" href="./database/CityTouch_kWh_Report.css"> 
+	<link rel="shortcut icon" href="./database/CityTouchLogo.png">
+	<script src="./database/CityTouch_kWh_Report.js"></script> <!--Link to external JavaScript file -->
+<!---------------------------------------------------------------------------------------------------->
+	
+<!---------------------------------------------------------------------------------------------------->
+	
+	
+	
+  <link href="Property%20Settings_files/SiteBootstrapCSS.css" rel="stylesheet">
+	
+  
+  <meta name="koLocalResource" content="ko.validation/cultures/en-US.js">
+  <link href="Property%20Settings_files/SiteBootstrapCSS.css" rel="stylesheet">
+
+  <link href="Property%20Settings_files/ui.css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+        <script src="/Scripts/html5shiv.js"></script>
+        <script src="/Scripts/respond.js"></script>
+    <![endif]-->
+
+    <script src="Property%20Settings_files/Global.js"></script>
+    <script src="Property%20Settings_files/modernizr.js"></script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../Scripts/ko.validation/cultures/en-US.js" src="Property%20Settings_files/en-US.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../Scripts/jquery.globalize/cultures/globalize.culture.en-SG.js" src="Property%20Settings_files/globalize.js"></script></head>
+
+
+
+<body onload="demo();">
+
+<!---------------------------------------------------------------------------------------------------->
+<details><summary> <span class="Gabriel_Note"> Notes </span></summary>
+<span class="Gabriel_Note"> ? Title = "CityTouch Energy Report"?  </span><br/><br/>
+<span class="Gabriel_Note"> ? favicon = <img src="./database/CityTouchLogo.png" style="width:2em;height:2em"></img></span><br/><br/>
+<span class="Gabriel_Note"> set URL as: energy.ct-connect.com </span>
+</details>
+<!---------------------------------------------------------------------------------------------------->
+
+    <div id="container-fluid">
+        <div id="site-header">
+            <div id="site-header-corner-left"></div>
+
+            <div id="site-header-middle">
+                <div id="site-header-logo" style="display: flex; flex-direction: row">
+                    <a href="https://citytouch.com/">
+                        <img class="custom-logo-image" src="Property%20Settings_files/GetCurrentCustomLogo.png" alt="CityTouch">
+                    </a>
+                    <div class="custom-logo-string">
+    <div>
+        <div class="custom-logo-title">SMART SYSTEM PJU</div>
+        <div class="custom-logo-subtitle">DINAS PERINDUSTRIAN DAN ENERGI PROV. DKI JAKARTA</div>
+        <div class="custom-logo-powered ">powered by CityTouch</div>
+    </div>
+</div>
+
+
+<p class="Gabriel_Note"> Banner: request vendor to mimic </p>
+                </div>
+
+                <div id="site-header-navigation">
+                    
+    <ul>
+        <li title="Last sign-in was at 24/10/2016 3:59 PM (UTC) from IP address 115.66.229.45. Current session started on 24/10/2016 4:06 PM (UTC) from IP address 115.66.229.45.">
+            gabriel.chen@philips.com
+        </li>
+
+        <li>
+            <div class="divider">
+            </div>
+        </li>
+
+                            <li>
+                                <a class="preference" href="https://citytouch.com/Settings">Settings</a>
+                            </li>
+                            <li>
+                                <div class="divider">
+                                </div>
+                            </li>
+
+        <li>
+            <a class="news" href="https://citytouch.com/Newsletter">News</a>
+        </li>
+
+        <li>
+            <div class="divider">
+            </div>
+        </li>
+
+        <li><a href="https://citytouch.com/Help/Index.html" target="_blank">Help</a></li>
+
+        <li>
+            <div class="divider">
+            </div>
+        </li>
+
+        <li id="login">
+            <a id="logOff" class="login" href="#">Sign Out</a>
+            <a href="https://citytouch.com/Account/LogOff" id="logOffUrl" style="display: none">yundotgvcH9EhrS/Lyz6xgidxc6PPXMtY5K2bORabfo=</a>
+        </li>
+    </ul>
+
+                </div>
+
+            </div>
+
+            <div id="site-header-corner-right"></div>
+        </div>
+    </div>
+
+    <div id="mainContent" style="height: 571px;">
+        <div id="wrapper">
+            
+
+
+
+
+<div id="admin-container">
+    <div id="admin-header">
+        <div id="title">
+            <img src="Property%20Settings_files/50pc_settings.png">
+            <h1 style="display: inline;">
+                <span class="Gabriel_Note">Energy Report</span>
+            <div id="activity-indicator" style="display: none;">
+                <img src="Property%20Settings_files/ajax-loader.gif" alt="Loading ..">
+        </div>
+    </div>
+    </div>
+
+    <!-- Tab Bar-->
+    <ul id="tab-bar" class="nav nav-tabs">
+        <li class=""><a href="#popup2"><span class="Gabriel_Note">User Settings<span class="Gabriel_Note"></a></li>
+            <li class="active"><a href="https://citytouch.com/Settings/SiteTasks">Site Settings</a></li>
+    </ul>
+    <!-- Tab Bar -->
+
+<!--------------------------- Pop up window ------------------------------------------------------------------>
+  <!--------------------------- ref:  https://codepen.io/imprakash/pen/GgNMXO -------------------------------->
+ <div id="popup2" class="overlay">
+	<div class="popup">
+		<h2>User Settings tab (popup2)</h2><br/>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Direct to <a href="./Change Password - CityTouch Account Server.htm">another page</a>, for user password management.
+		</div>
+	</div>
+</div>       
+ <!--------------------------- Pop up window ------------------------------------------------------------------>
+	
+	
+    <div id="admin-pane" style="display: block; height: 429px;">
+            <nav class="navbar-default navbar-static-side" role="navigation">
+        <ul class="nav" id="side-menu" style="background-color: #999999">
+                <li class=""><a href="#popup1"><span class="Gabriel_Note" style="font-size:11px">Property Settings</span></a></li>
+                <li class=""><a href="#popup1">Starsense Configurations</a></li>
+                <li class=""><a href="#popup1">Asset Data Type Settings</a></li>
+                <li class=""><a href="#popup1">Custom Names</a></li>
+                <li class=""><a href="#popup1">Application Keys</a></li>
+                <li class=""><a href="#popup1">Asset Upload</a></li>
+                <li class=""><a href="#popup1">Fault Categories</a></li>
+                <li class=""><a href="#popup1">Asset Summary Settings</a></li>
+                <li class=""><a href="#popup1">Asset Editor Settings</a></li>
+                <li class=""><a href="#popup1">Custom Logo Upload</a></li>
+                <li class=""><a href="#popup1">Energy Cost</a></li>
+				<li class="active"> <a href=""> Energy Report </a></li>
+        </ul>
+    </nav>
+
+ <!--------------------------- Pop up window ------------------------------------------------------------------>
+  <!--------------------------- ref:  https://codepen.io/imprakash/pen/GgNMXO -------------------------------->
+ <div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Sorry (popup1)</h2><br/>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			You do not have the authorization to access this tab from here, please contact Philips Project Manager Pak <a href="mailto:primus.nainggolan@philips.com"><b> Primus </b></a>.
+		</div>
+	</div>
+</div>       
+ <!--------------------------- Pop up window ------------------------------------------------------------------>
+
+
+<input name="__XAntiForgeryToken__" value="HUFUG/rGKAT4SpaR/zIodUzLtsA8FS1IGhPr/yQZljU=" type="hidden">
+
+<div id="propertymetasettings-view">
+    <div id="view-container" style="height: 426px;">
+        <div id="page-wrapper" style="height: 471px;">
+            <div class="row col-lg-12">
+                <h2 class="settings-header"><span class="Gabriel_Note">Energy Report</span></h2>
+            </div>
+
+			
+ <!--------------------------- Remove these buttons according to discussion with Victor on 25-Oct-2016 -----------			
+            <div class="row col-lg-12">
+                <div id="categoryselection">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <label class="control-label">Site:</label>
+                            </div>
+                            <div class="col-md-2">
+                                <select id="SiteSelector" data-bind="value: selectedSite" class="form-control input-sm">
+                                        <option value="AllJakarta" selected="selected"> All Jakarta </option>
+										<option value="JakartaPusat"> Jakarta Pusat </option>
+										<option value="JakartaUtara"> Jakarta Utara </option>
+										<option value="JakartaSelatan"> Jakarta Selatan </option>
+										<option value="JakartaTimur"> Jakarta Timur </option>
+										<option value="JakartaBarat"> Jakarta Barat </option>
+                                </select>
+                            </div>
+							
+							<div class="col-md-1">
+                                <label class="control-label">Year:</label>
+                            </div>
+                            <div class="col-md-2">
+                                <select id="YearSelector" data-bind="value: selectedYear" class="form-control input-sm">
+										<option value="2016"> 2016 </option>
+  										<option value="2017"> 2017 </option>
+  										<option value="2018"> 2018 </option>
+  										<option value="2019"> 2019 </option>
+  										<option value="2020"> 2020 </option>
+                                </select>
+                            </div>
+							
+							<div class="col-md-1">
+                                <label class="control-label">Month:</label>
+                            </div>
+                            <div class="col-md-2">
+                                <select id="SiteSelector" data-bind="value: selectedSite" class="form-control input-sm">
+										<option value="1">January</option>
+  										<option value="2">February</option>
+  										<option value="3">March</option>
+  										<option value="4">April</option>
+  										<option value="5">May</option>
+  										<option value="6">June</option>
+  										<option value="7">July</option>
+  										<option value="8">August</option>
+  										<option value="9">September</option>
+  										<option value="10">October</option>
+  										<option value="11">November</option>
+  										<option value="12">December</option>
+                                </select>
+                            </div>
+							<div class="col-md-2">
+								<button class="btn btn-sm" type="submit"> Confirm </button> 
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+--------------------------- Remove these buttons according to discussion with Victor on 25-Oct-2016 ----------------------->
+			
+			
+			
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="propertyOverview">
+                        <div class="panel panel-default panelGray">
+                            <div class="table-responsive fixed-table-height fixedScrollContainer">
+                                <table class="table table-bordered table-hover table-condensed fixedTableHeader" >
+                                    <thead>
+
+                                        <tr>
+                                            <th class="col-sm-1">Period</th>
+                                            <th class="col-sm-1">Site<a href="#popup4" class="Gabriel_Note">Note4</a></th>
+										</tr>
+									</thead>
+								</table>
+<!--------------------------- Pop up window ------------------------------------------------------------------>
+  <!--------------------------- ref:  https://codepen.io/imprakash/pen/GgNMXO -------------------------------->
+ <div id="popup4" class="overlay">
+	<div class="popup">
+		<h2>Maximum limit of the items (popup4)</h2><br/>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Maximum 6 items (6 month) can be displayed in one page, <br/>
+			uses [Previous] & [Next] to navigate if needed.<br/>
+			<input type="checkbox" checked> scroll bar to be disabled </input>
+		</div>
+	</div>
+</div>       
+ <!--------------------------- Pop up window ------------------------------------------------------------------>
+                                        
+                                    
+                                
+                                <div class="kWh_fixedBodyContainer">
+                                    <table class="table table-bordered table-hover table-condensed">
+                                        <tbody data-bind="foreach: properties">
+                                                <tr class="table-row-normal odd ">
+                                                    <td class="col-sm-6"> Oct-2016 (25-Sep-2016 ~ 24-Oct-2016) </td>
+                                                    <td class="col-sm-6"> 
+														
+															<select id="SiteSelector" class="form-control input-sm" onchange="document.getElementById('PDFdisplay').style.display='block'">
+																<option value="" selected="selected"> Please Select </option>
+																<option value="AllJakarta"> All Jakarta </option>
+																<option value="JakartaPusat"> Jakarta Pusat </option>
+																<option value="JakartaUtara"> Jakarta Utara </option>
+																<option value="JakartaSelatan"> Jakarta Selatan </option>
+																<option value="JakartaTimur"> Jakarta Timur </option>
+																<option value="JakartaBarat"> Jakarta Barat </option>
+															</select>
+														
+													</td>
+                                                </tr>
+
+												
+												<tr class="table-row-normal even ">
+                                                    <td class="col-sm-6"> Sep-2016 (25-Aug-2016 ~ 24-Sep-2016) </td>
+                                                    <td class="col-sm-6"> 
+														
+															<select id="SiteSelector" class="form-control input-sm" onchange="document.getElementById('PDFdisplay').style.display='block'">
+																<option value="" selected="selected"> Please Select </option>
+																<option value="AllJakarta"> All Jakarta </option>
+																<option value="JakartaPusat"> Jakarta Pusat </option>
+																<option value="JakartaUtara"> Jakarta Utara </option>
+																<option value="JakartaSelatan"> Jakarta Selatan </option>
+																<option value="JakartaTimur"> Jakarta Timur </option>
+																<option value="JakartaBarat"> Jakarta Barat </option>
+															</select>
+														
+													</td>
+                                                </tr>
+                                        
+                                                 <tr class="table-row-normal odd ">
+                                                    <td class="col-sm-6"> Aug-2016 (25-Jul-2016 ~ 24-Aug-2016) </td>
+                                                    <td class="col-sm-6"> 
+														
+															<select id="SiteSelector" class="form-control input-sm" onchange="document.getElementById('PDFdisplay').style.display='block'">
+																<option value="" selected="selected"> Please Select </option>
+																<option value="AllJakarta"> All Jakarta </option>
+																<option value="JakartaPusat"> Jakarta Pusat </option>
+																<option value="JakartaUtara"> Jakarta Utara </option>
+																<option value="JakartaSelatan"> Jakarta Selatan </option>
+																<option value="JakartaTimur"> Jakarta Timur </option>
+																<option value="JakartaBarat"> Jakarta Barat </option>
+															</select>
+														
+													</td>
+                                                </tr>
+
+												
+												<tr class="table-row-normal even ">
+                                                    <td class="col-sm-6"> Jul-2016 (25-Jun-2016 ~ 24-Jul-2016) </td>
+                                                    <td class="col-sm-6"> 
+														
+															<select id="SiteSelector" class="form-control input-sm" onchange="document.getElementById('PDFdisplay').style.display='block'">
+																<option value="" selected="selected"> Please Select </option>
+																<option value="AllJakarta"> All Jakarta </option>
+																<option value="JakartaPusat"> Jakarta Pusat </option>
+																<option value="JakartaUtara"> Jakarta Utara </option>
+																<option value="JakartaSelatan"> Jakarta Selatan </option>
+																<option value="JakartaTimur"> Jakarta Timur </option>
+																<option value="JakartaBarat"> Jakarta Barat </option>
+															</select>
+														
+													</td>
+                                                </tr>
+                                        
+										
+										                                                 <tr class="table-row-normal odd ">
+                                                    <td class="col-sm-6"> Jun-2016 (25-May-2016 ~ 24-Jun-2016) </td>
+                                                    <td class="col-sm-6"> 
+														
+															<select id="SiteSelector" class="form-control input-sm" onchange="document.getElementById('PDFdisplay').style.display='block'">
+																<option value="" selected="selected"> Please Select </option>
+																<option value="AllJakarta"> All Jakarta </option>
+																<option value="JakartaPusat"> Jakarta Pusat </option>
+																<option value="JakartaUtara"> Jakarta Utara </option>
+																<option value="JakartaSelatan"> Jakarta Selatan </option>
+																<option value="JakartaTimur"> Jakarta Timur </option>
+																<option value="JakartaBarat"> Jakarta Barat </option>
+															</select>
+														
+													</td>
+                                                </tr>
+
+												
+												<tr class="table-row-normal even ">
+                                                    <td class="col-sm-6"> May-2016 (25-Apr-2016 ~ 24-May-2016) </td>
+                                                    <td class="col-sm-6"> 
+														
+															<select id="SiteSelector" class="form-control input-sm" onchange="document.getElementById('PDFdisplay').style.display='block'">
+																<option value="" selected="selected"> Please Select </option>
+																<option value="AllJakarta"> All Jakarta </option>
+																<option value="JakartaPusat"> Jakarta Pusat </option>
+																<option value="JakartaUtara"> Jakarta Utara </option>
+																<option value="JakartaSelatan"> Jakarta Selatan </option>
+																<option value="JakartaTimur"> Jakarta Timur </option>
+																<option value="JakartaBarat"> Jakarta Barat </option>
+															</select>
+														
+													</td>
+                                                </tr>
+												
+												<tr class="table-row-normal odd ">
+                                                    <td class="col-sm-6" align="center"><button class="btn btn-sm" type="submit" disabled="disabled"> Previous </button><span class="Gabriel_Note"><a href="#popup3" >Note3</a></span></td>
+                                                    
+ <!--------------------------- Pop up window ------------------------------------------------------------------>
+  <!--------------------------- ref:  https://codepen.io/imprakash/pen/GgNMXO -------------------------------->
+ <div id="popup3" class="overlay">
+	<div class="popup">
+		<h2>Navigation button details (popup3)</h2><br/>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			If not available (no previous/next) then button [disable="disabled"]<br/>
+			This <button class="btn btn-sm" type="submit" disabled="disabled"> Previous </button> is disabled; and <button class="btn btn-sm" type="submit" > Next </button> is enabled.<br/>
+			<input type="checkbox">(?) Maybe move these 2 buttons outside of the table?</input>
+		</div>
+	</div>
+</div>       
+ <!--------------------------- Pop up window ------------------------------------------------------------------>
+													
+													<td class="col-sm-6" align="center"><button class="btn btn-sm" type="submit"> Next </button></td>
+                                                </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+<!---------------------------------------------------------------------------			
+<button class="btn btn-sm" type="submit" disabled="disabled"> Previous </button>
+<span class="Gabriel_Note"><a href="#popup3" >Note3</a></span>
+<button class="btn btn-sm" type="submit"> Next </button><br/>
+--------------------------------------------------------------------------->
+
+<ul class="kWh_pagination">
+  <li><a href="#">«</a></li>
+  <li><a class="active" href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">»</a></li>
+  <li><a href="#popup5"><span class="Gabriel_Note">Note</span></a></li>
+</ul>	
+			
+<!--------------------------- Pop up window ------------------------------------------------------------------>
+  <!--------------------------- ref:  https://codepen.io/imprakash/pen/GgNMXO -------------------------------->
+ <div id="popup5" class="overlay">
+	<div class="popup">
+		<h2>Paging Navigation button details (popup5)</h2><br/>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Request vendor to mimic CityTouch paging navigation button (written in MS SliverLight), align to right bottom.
+		</div>
+	</div>
+</div>       
+ <!--------------------------- Pop up window ------------------------------------------------------------------>
+<!--------------------------- Below is the PDF file display --------------------------------------------->		
+<br/><br/>
+<div id="PDFdisplay">
+	<span class="Gabriel_Note"> This is display method one (direct in page display when the selection is made) </span><br/>
+	<iframe id="iframePDFid" src="./database/Oct-2016(25-Sep-2016_24-Oct-2016).PDF#zoom=100" frameborder="0"></iframe><br/>
+</div>
+
+<!--------------------------- 
+<span class="Gabriel_Note"> This is display method two (open new browser tab to display) </span><br/>
+<button class="btn btn-sm" onclick= "window.open('./database/Oct-2016(25-Sep-2016_24-Oct-2016).PDF')" >Click to display PDF</button>
+
+
+<span class="Gabriel_Note"> This is display method three (click to open in page) </span><br/>
+<a href="./database/Oct-2016(25-Sep-2016_24-Oct-2016).PDF" target="iframe_PDF"><button class="btn btn-sm">Click to display PDF(iframe)</button></a><br/>
+<iframe src="" name="iframe_PDF" style="width:80%; height:700px;"></iframe>
+--------------------------------------------->
+
+
+<!--------------------------- Below is the original Asset setting details -------------------------------------->
+			<div class="kWh_HiddenDIV">
+			
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div data-bind="with: selectedProperty">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h5><span data-bind="text: name">Asset State</span></h5>
+
+                                    <div class="form-horizontal">
+
+                                        <div data-bind="validationOptions: { messageTemplate: &quot;customMessageTemplate&quot; }">
+                                            <div class="row" data-bind="visible: canToggleIsEnabled">
+                                                    <div class="col-md-2">
+                                                        <label class="control-label">Is Enabled:</label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input data-bind="checked: isEnabled, enable: $parent.canEdit" type="checkbox">
+                                                    </div>
+                                            </div>
+                                            <div class="row" data-bind="visible: canToggleIsEnabled">
+                                                <div class="col-md-5 thinline" style="margin-left: 10px;"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Custom Name:</label>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input class="form-control input-sm" data-bind="value: customName, enable: $parent.canToggleSettings, valueUpdate: 'afterkeydown'" disabled="disabled" type="text">
+    <div class="validationMessage" data-bind="validationMessage: field" style="display: none;"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-5 thinline" style="margin-left: 10px;"></div>
+                                            </div>
+                                            <div class="row" data-bind="visible: isCustomProperty" style="display: none;">
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Custom Category</label>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input class="form-control input-sm" data-bind="value: customCategory, enable: $parent.canToggleSettings, valueUpdate: 'afterkeydown'" disabled="disabled" type="text">
+    <div class="validationMessage" data-bind="validationMessage: field" style="display: none;"></div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row" data-bind="visible: isCustomProperty" style="display: none;">
+                                                <div class="col-md-5 thinline" style="margin-left: 10px;"></div>
+                                            </div>
+                                            <div class="row" data-bind="visible: canToggleUseCatalog" style="display: none;">
+                                                <div class="col-md-2">
+                                                    <label class="control-label">Use Catalog:</label>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input class="checkbox" data-bind="checked: useCatalog, enable: $parent.canToggleSettings" disabled="disabled" type="checkbox">
+                                                </div>
+                                            </div>
+                                            <div class="row" data-bind="visible: canToggleUseCatalog" style="display: none;">
+                                                <div class="col-md-5 thinline" style="margin-left: 10px;"></div>
+                                            </div>
+                                                <div class="row" data-bind="visible: canToggleIsPrintLabel">
+                                                    <div class="col-md-2">
+                                                        <label class="control-label">Is Print Label:</label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input class="checkbox" data-bind="checked: isPrintLabel, enable: $parent.canToggleSettings" disabled="disabled" type="checkbox">
+                                                    </div>
+                                                </div>
+                                                <div class="row" data-bind="visible: canToggleIsPrintLabel">
+                                                    <div class="col-md-5 thinline" style="margin-left: 10px;"></div>
+                                                </div>
+                                                                                            <div class="row" data-bind="visible: canToggleIsEnabledInJobView">
+                                                    <div class="col-md-2">
+                                                        <label class="control-label">Show in Job View:</label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input class="checkbox" data-bind="checked: isEnabledInJobView, enable: $parent.canToggleSettings" disabled="disabled" type="checkbox">
+                                                    </div>
+                                                </div>
+                                                <div class="row" data-bind="visible: canToggleIsEnabledInJobView">
+                                                    <div class="col-md-5 thinline" style="margin-left: 10px;"></div>
+                                                </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-md-6">
+                                        <div id="catalogOverview" data-bind="visible: useCatalog()" style="display: none;">
+                                            <h5>Catalog</h5>
+                                            <div class="list-box" style="height: 8.75em;">
+                                                <ul data-bind="foreach: catalog"></ul>
+                                            </div>
+
+                                            <input class="form-control input-sm" data-bind="value: newCatalogItem, valueUpdate: 'afterkeydown', enable: $parent.canToggleSettings, executeOnEnter: addCatalogItem.execute" placeholder="Enter a new catalog item" disabled="disabled" type="text"><span class="validationMessage" style="display: none;"></span>
+                                            <button class="btn btn-sm" data-bind="command: addCatalogItem, valueUpdate: 'afterkeydown'" disabled="disabled">Add</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-md-12">
+                                        <div class="form-actions">
+                                            <button class="btn btn-sm" data-bind="command: $parent.saveCmd, activity: $parent.saveCmd.isExecuting" disabled="disabled">Save</button>
+											
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+			</div>
+
+        </div>
+        <div id="notifier-container">
+            <div id="notifier" data-bind="visible: !detailsDirty()"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script id="customMessageTemplate" type="text/html">
+    <div class="validationMessage" data-bind='validationMessage: field'></div>
+</script>
+
+
+
+    </div>
+</div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="Property%20Settings_files/ThirdPartyGlobal"></script>
+
+
+    <script type="text/javascript" src="Property%20Settings_files/ApplicationContainer_003.js"></script>
+    <script type="text/javascript" src="Property%20Settings_files/ApplicationContainer_002.js"></script>
+    <script type="text/javascript" src="Property%20Settings_files/ApplicationContainer.js"></script>
+    
+  
+    <script type="text/javascript" src="Property%20Settings_files/Settings.js"></script>
+    <script type="text/javascript" src="Property%20Settings_files/KeepAlive.js"></script>
+
+    
+    <script type="text/javascript">
+        if (self == top) {
+            var content = document.getElementById("admin-pane");
+            content.style.display = "block";
+        } else {
+            top.location = self.location;
+        }
+    </script>
+
+    
+    <script type="text/javascript" src="Property%20Settings_files/ctsettings.js"></script>
+
+    
+
+
+
+
+
+</body></html>

@@ -1,0 +1,139 @@
+/* Need to copy over Philips.css*/
+
+
+#Hyperlink_Target_Table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 50%;
+    border-collapse: collapse;		/*no-collapse*/
+}
+
+#Hyperlink_Target_Table td, #Hyperlink_Target_Table th {
+    font-size: 1em;
+    border: 1px solid #98bf21;
+    padding: 3px 7px 2px 7px;
+}
+
+#Hyperlink_Target_Table th {
+    font-size: 1.1em; 			/*1em is equal to the current font size. 2em means 2 times the size of the current font. */
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #ffffff;
+}
+
+#Hyperlink_Target_Table tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
+	
+.Gabriel_Note {			/*This is a class setting*/
+	font-family: "Arial";
+	font-size: 16px;
+	color: red; 
+	background-color: yellow;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+
+.kWh_fixedBodyContainer{
+	overflow-y:hidden;
+	display:block;height:297px;min-width:695px;
+	background-color:#fff;
+	-ms-overflow-style:scrollbar}
+	
+.kWh_btn{
+	position:absolute;
+    left: 25%;
+}
+
+#PDFdisplay {
+	display:none;
+}
+
+#iframePDFid{
+width:90%; height:700px;
+}
+
+.kWh_HiddenDIV{
+	display:none;
+}
+
+
+
+ul.kWh_pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.kWh_pagination li {display: inline;}
+
+ul.kWh_pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+ul.kWh_pagination li a.active {
+    background-color: #CDCECE;
+	border-radius: 2px
+    /*color: white;*/
+}
+
+ul.kWh_pagination li a:hover:not(.active) {
+	/*background-color: #ddd;*/
+	border-width: 1px;
+	border-style: solid;
+	border-color: darkgrey;
+	border-radius: 2px
+}
